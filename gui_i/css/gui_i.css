@@ -1,0 +1,149 @@
+/*
+    File: /usr/cs/2018/acrowley/public_html/gui_i/css/gui_i.css
+    Created: 10-9-2019
+    File Description: CSS styling for the GUI I page of Andrew Crowley's website,
+    written as part of COMP 4610-201 assignment Styling Your First Webpage.
+    Most styling borrowed from /usr/cs/2018/acrowley/public_html/css/index.css
+    COMP 4610-201 Assignment: Styling Your First Web Page
+    Andrew Crowley, UMass Lowell Computer Science, andrew_crowley@student.uml.edu
+    Copyright (c) 2019 by Andrew Crowley. All rights reserved.
+*/
+
+body {
+    width: 90%;
+    min-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #2b2b2b;
+    font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+}
+
+/*
+Encapsulates all page content through a div child of the body tag.
+*/
+#mainBox {
+    border: 2px solid black;
+    border-radius: 3px;
+    background-color: #a6e6e6ee;
+    box-shadow: 2px 2px 8px 4px #a6e6e6;
+}
+
+/*
+The header bottom-border asthetically separates
+the section from #contentBox contents.
+*/
+header {
+    background-color: #b8b8b8;
+    border-bottom: 1px solid black;
+}
+header h1 {
+    margin: 0px 0px 8px 0px;
+    text-align: center;
+    font-family: consolas, "Courier New", monospace;
+    font-size: 32px;
+}
+
+/*
+Styling for a horiziontal navigation bar.
+Assumes the nav section is a child of header.
+*/
+nav {
+    text-align: center;
+}
+nav ul {
+    display: inline;
+    padding: 0px;
+    list-style-type: none;
+}
+nav ul li {
+    display: inline;
+}
+
+/*
+Button-like styling for nav links.
+Displaying navButton links as inline-blocks
+prevents their padding from bleeding below the nav section.
+*/
+.navButton {
+    display: inline-block;
+    padding: 2px 6px 2px 6px;
+    border: 1px solid black;
+    border-bottom: none;
+    border-radius: 4px 4px 0px 0px;
+    background-color: #1b1b1b;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff;
+}
+.navButton:hover{
+    background-color: #00ff00;
+    color: black;
+}
+
+/*
+Distinguishes the working page on the nav bar by
+coloring the working page's link.
+Apply only to the nav bar link to the working page.
+*/
+.on {
+    color: #ffff66;
+}
+
+/*
+Contains all content between the header and footer. 
+overflow set to create new block formatting context
+for contained floats.
+*/
+#contentBox {
+    overflow: hidden;
+}
+#contentBox h2 {
+    margin: 24px 0px 0px 8px;
+    font-size: 24px;
+    font-weight: 500;
+}
+#contentBox h2:first-of-type {
+    margin-top: 12px;
+}
+#contentBox p {
+    width: 50%;
+    margin: 8px 0px 0px 12px;
+    font-size: 18px;
+    font-weight: 400;
+}
+#contentBox a {
+    text-decoration: none;
+    color: #4400ff
+}
+#contentBox a:visited {
+    color: #8844cc;
+}
+#contentBox blockquote {
+    width: 40%;
+    margin: 8px 0px 0px 16px;
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: #b8b8b8cc;
+    font-size: 18px;
+}
+
+table {
+    float: right;
+    margin-top: 12px;
+    background-color: #b8b8b8cc;
+    font-size: 18px;
+}
+
+table, tr, td {
+    border: 2px solid black;
+    border-right: none;
+    border-collapse: collapse;
+}
+
+footer {
+    margin-top: 24px;
+    background-color: black;
+    text-align: center;
+    color: #ffffff;
+}

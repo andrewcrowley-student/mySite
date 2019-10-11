@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+    File: /usr/cs/2018/acrowley/public_html/index.html
+    Created: 10-9-2019
+    File Description: Home page of Andrew Crowley, undergraduate of
+        Computer Science at UMass Lowell. Page created for COMP 4610-201 coursework.
+        This page and associated styling have been reworked from Assignment 2 of
+        the course to reflect to-date teachings on CSS and HTML. 
+    COMP 4610-201 Assignment: Styling Your First Web Page
+    Andrew Crowley, UMass Lowell Computer Science, andrew_crowley@student.uml.edu
+    Copyright (c) 2019 by Andrew Crowley. All rights reserved.
+-->
+<html lang="en">
+<head>
+    <title>Andrew Crowley | Home</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Andrew Crowley">
+    <link href="./css/index.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <!--
+        Main content container of the page.
+        Any HTML element to be displayed on the page should be
+        encapsulized here for external CSS styling.
+    -->
+    <div id="mainBox">
+        <header>
+            <h1>Andrew Crowley</h1>
+            <nav>
+                <ul>
+                    <li><a href="./index.html" class="navButton on">Home</a></li>
+                    <li><a href="./gui_i/gui_i.html" class="navButton">GUI I</a></li>
+                    <li><a href="./index.html" class="navButton">GUI II</a></li>
+                    <li><a href="./index.html" class="navButton">Mobile App I</a></li>
+                    <li><a href="./index.html" class="navButton">Mobile App II</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!--
+            Content between the header and footer sections are encapsulized for
+            external CSS styling purposes.
+        -->
+        <div id="contentBox">
+            <div id="idBox">
+                <img id="idImg" src="./images/andrew_crowley-portrait.jpg" alt="Andrew Crowley Portrait">
+                <div id="idText">
+                    Andrew Crowley<br>
+                    UMass Lowell Computer Science<br>
+                    Undergraduate Class of 2020<br>
+                    Email: <a href="mailto:andrew_crowley@student.uml.edu">andrew_crowley@student.uml.edu</a>
+                </div>
+            </div>
+            <h2>Welcome!</h2>
+            <p>
+                This is the academic website of Andrew Crowley, hosted by the
+                <a href="https://www.uml.edu/Sciences/computer-science/">UMass Lowell Computer Science
+                    Department</a>.<br><br>
+                Throughout the 2020 Academic Year, I'll be updating this site in conjunction with my progress in
+                <a href="https://www.uml.edu/catalog/courses/comp/4610">GUI Programming I</a>.
+                This page will serve as an index to my GUI I assignments, and possibly projects
+                completed in personal interest or for other courses.
+            </p>
+            <h2>About Me</h2>
+            <p>
+                I began studying at UMass Lowell in Spring 2014, majoring in Computer Science to pursue a career in
+                Software Engineering.
+                The profession captivated me as means of interactive representation through expandable, computational
+                design.<br><br>
+                From August 2018-2019, I worked at <a href="https://www.draper.com/">Draper Laboratory</a> as a DevOps
+                engineer, developing a software test interface for the
+                <a href="https://www.draper.com/explore-solutions/trident-ii-mark-6-mod-1-guidance-system">Trident II
+                    Missile Guidance System</a>.
+                I hope to continue my career with Draper upon graduation, someday migrating into the video game
+                industry.
+            </p>
+        </div>
+        <footer>
+                ©Andrew Crowley
+        </footer>
+    </div>
+</body>
