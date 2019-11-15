@@ -1,0 +1,46 @@
+<!--File: multiplication_table.html
+    Created: 11-14-2019
+    File Description: HTML layer of the Multiplication Table widget.
+    Provides a form for submitting the multiplier and mutliplicand bounds
+    of a desired output table, and a wrapper to draw the table into.
+    COMP 4610-201 Assignment: Creating an Interactive Dynamic Table
+
+    Andrew Crowley, UMass Lowell Computer Science, andrew_crowley@student.uml.edu
+    Copyright (c) 2019 by Andrew Crowley. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Multiplication Table</title>
+    <link rel="stylesheet" href="./css/multiplication_table.css">
+    <script type="text/javascript" src="./js/multiplication_table.js"></script>
+</head>
+<body>
+    <div id="widgetWrapper">
+        <form id="timesTableForm">
+            <div class="formInputWrapper">
+                <label for="minMultiplier">Lower Multiplier:</label>
+                <input id="minMultiplier" type="text">
+                <label id="minMultiplierErrorLabel" class="errorLabel" for="minMultiplier"></label>
+            </div>
+            <div class="formInputWrapper">
+                <label for="maxMultiplier">Upper Multiplier:</label>
+                <input id="maxMultiplier" type="text">
+                <label id="maxMultiplierErrorLabel" class="errorLabel" for="maxMultiplier"></label>
+            </div>
+            <div class="formInputWrapper">
+                <label for="minMultiplicand">Lower Multiplicand:</label>
+                <input id="minMultiplicand" type="text">
+                <label id="minMultiplicandErrorLabel" class="errorLabel" for="minMultiplicand"></label>
+            </div>
+            <div class="formInputWrapper">
+                <label for="maxMultiplicand">Upper Multiplicand:</label>
+                <input id="maxMultiplicand" type="text">
+                <label id="maxMultiplicandErrorLabel" class="errorLabel" for="maxMultiplicand"></label>
+            </div>
+            <input id="tableFormSubmitButton" type="button" value="Submit" onclick="populateTimesTable()">
+        </form>
+        <div id="timesTableWrapper"></div>
+    </div>
+</body>
