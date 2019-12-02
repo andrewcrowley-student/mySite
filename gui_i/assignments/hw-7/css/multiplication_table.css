@@ -1,0 +1,118 @@
+/* File: multiplication_table.css
+ * Created: 11-14-2019
+ * File Description: CSS layer of the Multiplication Table widget.
+ * Defines styling attributes for widget elements
+ * defined dynamically in JavaScript and in-document.
+ * COMP 4610-201 Assignment: Using the jQuery Validation Plugin with Your Dynamic Table
+ *
+ * Andrew Crowley, UMass Lowell Computer Science, andrew_crowley@student.uml.edu
+ * Copyright (c) 2019 by Andrew Crowley. All rights reserved.
+*/
+
+body {
+    background-color: #2b2b2b;
+    font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+}
+
+/*
+ * Styles the wrapper of the widget's body.
+*/
+#widgetWrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 512px;
+    border: 2px solid black;
+    background-color: #a6e6e6ee;
+}
+
+/*
+ * Styles the multiplier and multiplicand range input form.
+ * Text is center-aligned to align the form's Submit button without a wrapper.
+*/
+#timesTableForm {
+    width: 100%;
+    padding-top: 4px;
+    text-align: center;
+}
+/*
+ * Styles the wrapper of a range input field.
+ * A range input field consists of a naming label, text input, and an error label.
+*/
+.formInputWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
+}
+/*
+ * Styles a label naming an input range field.
+*/
+.formInputWrapper label {
+    flex-basis: 30%;
+    margin-left: 8px;
+}
+/*
+ * Text input styling of a range field.
+*/
+.formInputWrapper input {
+    text-align: center;
+    width: 20%;
+}
+/*
+ * Error labels contain no initial in-document text,
+ * and are the targets of input value error messages from mutliplication_table.js
+*/
+.formInputWrapper .errorLabel {
+    flex-basis: 50%;
+    color: #ff6666;
+    font-weight: bold
+}
+
+/*
+ * Wrapper to contain a multiplication table
+ * dynamically-created by mutliplication_table.js upon valid range input.
+ *
+ * overflow-x is set to auto, enabling x-axis scrolling for a table
+ * with a multiplier range large enough to spill content from #widgetWrapper.
+*/
+#timesTableWrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/*
+ * Styling for a dynamically-generated multiplication table.
+ *
+ * Width is minimum to fill the width of #widgetWrapper,
+ * but to allow for scrolling overflow upon a large enough multiplier range.
+*/
+#timesTable {
+    min-width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+/*
+ * Styles top and right table cell borders only,
+ * preventing clipping with #widgetWrapper borders.
+*/
+#timesTable td {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    text-align: center;
+}
+/*
+ * The first row and column of the table contain its
+ * multipliers and multiplicands respectively, and are
+ * given a darker background to separate them from product cells.
+*/
+#timesTable tr:first-of-type td, #timesTable td:first-child {
+    background-color: #3cb6b6ee;
+}
+/*
+ * The last cell of each table row has no right border,
+ * preventing clipping with the #widgetWrapper right border.
+*/
+#timesTable td:last-of-type {
+    border-right: 0px;
+}
+

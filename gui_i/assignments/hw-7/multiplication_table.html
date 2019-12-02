@@ -1,0 +1,58 @@
+<!--File: multiplication_table.html
+    Created: 11-14-2019
+    File Description: HTML layer of the Multiplication Table widget.
+    Provides a form for submitting the multiplier and mutliplicand bounds
+    of a desired times table, and a wrapper to draw the table into.
+    Form event listeners are handled externally from the HTML document.
+
+    COMP 4610-201 Assignment: Using the jQuery Validation Plugin with Your Dynamic Table
+    Andrew Crowley, UMass Lowell Computer Science, andrew_crowley@student.uml.edu
+    Copyright (c) 2019 by Andrew Crowley. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Multiplication Table</title>
+    <link rel="stylesheet" href="./css/multiplication_table.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/multiplication_table.js"></script>
+</head>
+<body>
+    <!-- widgetWrapper wraps the range input form of the times table,
+        as well as the generated times table itself.-->
+    <div id="widgetWrapper">
+        <!-- Form text inputs are wrapped in formInputWrapper divs for styling purposes.
+            An .errorLabel label of an input is fed a contextual error message from multiplication_table.js
+            upon recieving an erroneous input value-->
+        <form id="timesTableForm">
+            <!-- Lower multiplier bound input-->
+            <div class="formInputWrapper">
+                <label for="minMultiplier">Lower Multiplier:</label>
+                <input class="rangeInput" id="minMultiplier" type="text">
+                <label id="minMultiplierErrorLabel" class="errorLabel" for="minMultiplier"></label>
+            </div>
+            <!-- Upper multiplier bound input-->
+            <div class="formInputWrapper">
+                <label for="maxMultiplier">Upper Multiplier:</label>
+                <input class="rangeInput" id="maxMultiplier" type="text">
+                <label id="maxMultiplierErrorLabel" class="errorLabel" for="maxMultiplier"></label>
+            </div>
+            <!-- Lower multiplicand bound input-->
+            <div class="formInputWrapper">
+                <label for="minMultiplicand">Lower Multiplicand:</label>
+                <input class="rangeInput" id="minMultiplicand" type="text">
+                <label id="minMultiplicandErrorLabel" class="errorLabel" for="minMultiplicand"></label>
+            </div>
+            <!-- Upper multiplicand bound input-->
+            <div class="formInputWrapper">
+                <label for="maxMultiplicand">Upper Multiplicand:</label>
+                <input class="rangeInput" id="maxMultiplicand" type="text">
+                <label id="maxMultiplicandErrorLabel" class="errorLabel" for="maxMultiplicand"></label>
+            </div>
+            <input id="tableFormSubmitButton" type="button" value="Submit">
+        </form>
+        <!-- Wrapper div that the generated times table will be inserted into-->
+        <div id="timesTableWrapper"></div>
+    </div>
+</body>
