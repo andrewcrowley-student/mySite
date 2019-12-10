@@ -1,0 +1,72 @@
+<!--File: multiplication_table.html
+    Created: 11-14-2019
+    File Description: HTML layer of the Multiplication Table widget.
+    Provides a form for submitting the multiplier and mutliplicand bounds
+    of a desired times table, as well as a list for holding created tables as JQuery UI tab widget items.
+    Form input validation and table creation are handled externally from the HTML document.
+    COMP 4610-201 Assignment: Using the jQuery UI Slider and Tab Widgets
+
+    Andrew Crowley, UMass Lowell Computer Science, andrew_crowley@student.uml.edu
+    Copyright (c) 2019 by Andrew Crowley. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Multiplication Table</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="./css/multiplication_table.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript"src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/multiplication_table.js"></script>
+
+
+</head>
+
+<body>
+    <!-- widgetWrapper encapsulates the Multiplication Table Widget's
+        static and dynamic contents-->
+    <div id="widgetWrapper">
+        <!-- JQuery UI Tab widget for the Multiplication Widget,
+        responsible for holding the static range input tab
+        and dynamic tabs containing generated times tables-->
+        <div id="widgetTabs">
+            <ul>
+                <li><a href="#inputTab">Range Input</a></li>
+            </ul>
+            <!-- Input tab of the Multiplication Table Widget,
+            containing a form for specifying times table value ranges-->
+            <div id="inputTab">
+                <form id="tableRangeForm">
+                    <!-- A rangeGroupWrapper encapsulates the form inputs
+                        of either the multiplier or multiplicand range's lower and upper bounds-->
+                    <div class="rangeGroupWrapper" id="multipliers">
+                        <!-- Lower multiplier bound input-->
+                        <label for="minMultiplier">Lower Multiplier:</label>
+                        <input class="rangeInput" id="minMultiplier" type="text">
+                        <label id="minMultiplierErrorLabel" class="errorLabel" for="minMultiplier"></label>
+                        <!-- Upper multiplier bound input-->
+                        <label for="maxMultiplier">Upper Multiplier:</label>
+                        <input class="rangeInput" id="maxMultiplier" type="text">
+                        <label id="maxMultiplierErrorLabel" class="errorLabel" for="maxMultiplier"></label>
+                        <div id="multiplierSlider" class="rangeSlider"></div>
+                    </div>
+                    <div class="rangeGroupWrapper" id="multiplicands">
+                        <!-- Lower multiplicand bound input-->
+                        <label for="minMultiplicand">Lower Multiplicand:</label>
+                        <input class="rangeInput" id="minMultiplicand" type="text">
+                        <label id="minMultiplicandErrorLabel" class="errorLabel" for="minMultiplicand"></label>
+                        <!-- Upper multiplicand bound input-->
+                        <label for="maxMultiplicand">Upper Multiplicand:</label>
+                        <input class="rangeInput" id="maxMultiplicand" type="text">
+                        <label id="maxMultiplicandErrorLabel" class="errorLabel" for="maxMultiplicand"></label>
+                        <div id="multiplicandSlider" class="rangeSlider"></div>
+                    </div>
+                    <input id="tableFormSubmitButton" type="button" value="Create Table">
+                    <input id="tabClearButton" type="button" value="Clear Tabs">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
