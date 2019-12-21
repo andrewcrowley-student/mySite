@@ -1,0 +1,11 @@
+**************
+*Image Sources
+**************
+
+./tiles/tiles.png: https://jesseheines.com/~heines/91.461/91.461-2015-16f/461-assn/Scrabble_LetterTiles.png
+./tiles/Scrabble_Tiles.zip: https://jesseheines.com/~heines/91.461/91.461-2015-16f/461-assn/Scrabble_Tiles.html
+
+./board/board.jpg: https://jesseheines.com/~heines/91.461/91.461-2015-16f/461-assn/ScrabbleBoard.jpg
+./board/board-one_line.png: https://d1b10bmlvqabco.cloudfront.net/attach/icm9jynacvn5kx/i5ic1b2hwmz6nv/ihf34c9jbxpw/Scrabble_Board_OneLine.png
+
+./tile_tray.png: https://pixabay.com/static/uploads/photo/2014/07/31/20/48/scrabble-tile-holder-406774_640.png

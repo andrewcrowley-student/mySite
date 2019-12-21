@@ -1,0 +1,85 @@
+<!--File: pseudo-scrabble.html
+    COMP 4610-201 Assignment: Implementing a Bit of Scrabble with Drag-and-Drop
+    Created: 12-16-2019
+    File Description: Content layer of the Pseudo-Scrabble word game,
+    a single-line rendition of Hasbro's Scrabble.
+
+    To begin playing, click the "New Game" button in the upper-right corner of the game area.
+
+    Each round, your goal is to spell a single word across the game board using letter tiles,
+    beginning spelling from the Star space. To place a tile onto the board, click and drag the tile into place.
+    When a tile is placed, it cannot be removed, so spell wisely!
+
+    To score your word, click the "Score My Word!" button beneath the game board.
+    If your word doesn't exist in the English dictionary, you will earn 0 points for the round.
+    Otherwise, the word will be scored according to Scrabble scoring: https://scrabble.hasbro.com/en-us/rules.
+
+    Clicking "Score My Word!" begins a new round of Pseudo-Scrabble. Your score is retained across rounds.
+    However, game tiles are of limited supply, and replenish only when a new game is started.
+    Tile distribution follows the Scrabble standard:
+    A-9, B-2, C-2, D-4, E-12, F-2, G-3, H-2, I-9, J-1, K-1, L-4, M-2, N-6, O-8, P-2, Q-1, R-6, S-4, T-6, U-4, V-2,
+    W-2, X-1, Y-2, Z-1 and Blanks-2 (https://scrabble.hasbro.com/en-us/faq).
+
+
+    Scrabble_Pieces_AssociativeArray_Jesse.js implements the ScrabbleTiles associative array,
+    utilized in pseudo-scrabble.js for managing tile distribution and word score allotment.
+    Scrabble_Pieces_AssociativeArray_Jesse.js is credit to Jesse Heines, heines@cs.uml.edu,
+    of the UMass Lowell Computer Science department.
+
+    Andrew Crowley, UMass Lowell Computer Science, andrew_crowley@student.uml.edu
+    Copyright (c) 2019 by Andrew Crowley. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Pseudo-Scrabble</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="./css/pseudo-scrabble.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/Scrabble_Pieces_AssociativeArray_Jesse.js"></script>
+    <script type="text/javascript" src="./js/pseudo-scrabble.js"></script>
+</head>
+<body>
+    <!--#gameArea div wraps the game's graphics and play space-->
+    <div id="gameArea">
+        <!--#scoreBox spans are updated by pseudo-scrabble.js
+            with the player's score and information about the previous round.-->
+        <div id="scoreBox">
+            Round : <span id="roundCount"></span></br>
+            Score : <span id="gameScore"></span></br>
+            Last Round's Score : <span id="roundScore"></span></br>
+            Last Round's Word: <span id="roundWord"></span></br>
+        </div>
+        <!-- Clicking this button begins a new Pseudo-Scrabble game,
+            setting the player's score to 0 and restoring played tiles to the tile bank.-->
+        <button id="newGameButton">New Game</button>
+        <!-- #gameBoard wraps the list of game board spaces
+            that the player may place game tiles on.-->
+        <div id="gameBoard">
+            <ul id="boardSpaces">
+                <!-- The player must first place a tile to the #startSpace,
+                    after which its right-adjacent space becomes playable, and so on.-->
+                <li class="boardSpace" id="startSpace"></li>
+                <li class="boardSpace"></li>
+                <li class="boardSpace doubleLetterSpace"></li>
+                <li class="boardSpace"></li>
+                <li class="boardSpace doubleWordSpace"></li>
+                <li class="boardSpace doubleLetterSpace"></li>
+                <li class="boardSpace"></li>
+                <li class="boardSpace"></li>
+                <li class="boardSpace doubleWordSpace"></li>
+            </ul>
+        </div>
+        <!-- The player clicks this button when their game board is ready to be scored.
+            Their placed tiles are then validated as a word and scored by Scrabble rules.
+            A new round begins after the board is scored.-->
+        <button id="scoreWordButton">Score Your Word!</button>
+        <!-- Tray for containing drawn tiles, from which the player drags tiles to the game board.-->
+        <div id="tileTray"></div>
+    </div>
+</body>
+</html>
